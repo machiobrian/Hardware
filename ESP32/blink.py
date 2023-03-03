@@ -1,7 +1,7 @@
 from machine import Pin, Timer
 import time
 
-led = Pin(2,Pin.OUT)
+led = Pin("LED",Pin.OUT)
 timer  = Timer(0)
 toggle = 1 
 

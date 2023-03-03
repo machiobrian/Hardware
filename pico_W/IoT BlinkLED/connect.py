@@ -2,10 +2,12 @@
 # from blink import *
 # from blink import led
 ############################################################################
-
+import machine
 from machine import Pin
 import network
 import time
+from blink import blink_function
+
 try:
   import usocket as socket
 except:
@@ -53,7 +55,7 @@ def web_server():
     input:checked+.slider:before{-webkit-transform:translateX(52px);-ms-transform:translateX(52px);transform:translateX(52px)}
     </style><script>function toggleCheckbox(element) { var xhr = new XMLHttpRequest(); if(element.checked){ xhr.open("GET", "/?led=on", true); }
     else { xhr.open("GET", "/?led=off", true); } xhr.send(); }</script></head><body>
-    <h1>Pico W IoT Relay Control</h1><label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" %s><span class="slider">
+    <h1>Pico W IoT LED Control</h1><label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" %s><span class="slider">
     </span></label></body></html>""" % (led_state)
     return html
     
@@ -79,6 +81,7 @@ while True:
         if led_on == 6:
             print('LED ON')
             led.value(1)
+            # blink_function()
             
         if led_off == 6:
             print('LED OFF')
