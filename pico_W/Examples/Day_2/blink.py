@@ -10,7 +10,7 @@ def tick(timer):
     led.toggle()
     
 timer.init(
-    freq = 3.5,
+    freq = 5.5,
     mode = Timer.PERIODIC,
     callback = tick
     )
