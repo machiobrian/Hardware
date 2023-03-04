@@ -1,7 +1,8 @@
 import machine
 import utime 
 
-sensor_temp = machine.ADC(4)
+sensor_temp = machine.ADC(4) # defined ADC channel by "channel"
+# sensor_temp = machine.ADC() # defined by pin number : fifth ADC input
 
 conversion_factor = 3.3 / (65535)
 
@@ -10,4 +11,4 @@ while True:
 
     temperature = 27 - (reading - 0.706)/0.001721
     print(temperature)
-    utime.sleep(2)
+    utime.sleep(1)
