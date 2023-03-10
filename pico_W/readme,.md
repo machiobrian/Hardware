@@ -1,1 +1,0 @@
-Real-time responsiveness: Embedded systems often need to respond to events and inputs in real-time. State machines can help to ensure that the system responds quickly and efficiently to these events, which is essential in many embedded systems applications.
