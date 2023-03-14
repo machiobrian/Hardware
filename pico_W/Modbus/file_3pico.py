@@ -3,7 +3,7 @@ import umodbus
 import ustruct
 
 # Create a ModbusSlave instance with the appropriate serial port and baud rate
-slave = modbus.ModbusSlave(machine.UART(0, baudrate=9600), mode=modbus.MODE_RTU)
+slave = umodbus.ModbusSlave(machine.UART(0, baudrate=9600), mode=modbus.MODE_RTU)
 
 # Define the addresses and values of the coils and holding registers
 coil_values = [False, True, False, True, False, True, False, True]

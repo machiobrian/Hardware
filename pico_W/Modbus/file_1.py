@@ -1,4 +1,5 @@
-import serial
+# import serial
+from umodbus.serial import Serial
 import struct
 
 # Modbus function codes
