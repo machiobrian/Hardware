@@ -37,3 +37,6 @@ After the Project, Read this Doc.
 
     "IREGS" (also known as "input registers") are used to store data values that can be read by a controller, but cannot be written to directly. 
     These registers can be used to store data from sensors or other external devices.
+
+### Modbus: IIoT All about ModBus
+> http://www.simplymodbus.ca/FAQ.htm

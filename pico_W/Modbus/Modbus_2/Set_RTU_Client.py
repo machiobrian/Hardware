@@ -7,8 +7,8 @@ rtu_pins = (Pin(4), Pin(5)) # TX, RX Respectively
 uart_ID = 1 # since we are using pin 4/5, we map serial UART1 to GPIO4/5 hence 
             # the UART_ID = 1
 
-slave_address = 10 # this is the address on the bus as client
-baudrate = 115200 # the default is 9600
+slave_address = 1 # this is the address on the bus as client
+baudrate = 115200 # the default is 9600 : most prefered
 
 # print('Using Pins {} with UART ID {}'.format(rtu_pins, uart_ID)) # degugging
 
