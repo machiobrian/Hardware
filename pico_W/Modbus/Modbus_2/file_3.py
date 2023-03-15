@@ -1,1 +1,1 @@
-from umodbus.serial import ModbusRTUSlave
+from umodbus.serial import ModbusRTU
