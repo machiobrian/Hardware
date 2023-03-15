@@ -13,7 +13,7 @@ baudrate = 115200 # the default is 9600
 # print('Using Pins {} with UART ID {}'.format(rtu_pins, uart_ID)) # degugging
 
 client = ModbusRTU(
-    address = slave_address,
+    addr = slave_address,
     pins = rtu_pins,
     baudrate = baudrate,
     uart_id = uart_ID
@@ -66,3 +66,22 @@ register_definitions = {
     }
 }
 
+# reset all registers back to their default value
+register_definitions['COILS']['RESET_REGISTER_DATA_COIL']['on_set_cb'] = reset_data_regs
+print('Setting-up Regs ...')
+client.setup_registers(registers=register_definitions)
+print('Register setup done')
+
+print('Serving as RTU client on address {} at {} baud'.
+      format(slave_address, baudrate))
+
+while True:
+    try:
+        result = client.process()
+    except KeyboardInterrupt:
+        print('KeyboardInterrupt, stopping RTU client...')
+        break
+    except Exception as e:
+        print('Exception during execution: {}'.format(e))
+
+print("Finished providing/accepting data as client")
