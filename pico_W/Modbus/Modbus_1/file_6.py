@@ -1,17 +1,18 @@
 from umodbus.serial import ModbusRTU
+from machine import Pin
 
 # RTU Client/Slave setup
 
 # the following definition is for an ESP32
-rtu_pins = (25, 26)         # (TX, RX)
-uart_id = 1
+# rtu_pins = (25, 26)         # (TX, RX)
+# uart_id = 1
 
 # the following definition is for a RP2
-# rtu_pins = (Pin(0), Pin(1))     # (TX, RX)
-# uart_id = 0
-#
-# rtu_pins = (Pin(4), Pin(5))     # (TX, RX)
-# uart_id = 1
+rtu_pins = (Pin(0), Pin(1))     # (TX, RX)
+uart_id = 0
+
+rtu_pins = (Pin(4), Pin(5))     # (TX, RX)
+uart_id = 1
 
 # the following definition is for a pyboard
 # rtu_pins = (Pin(PB6), Pin(PB7))   # (TX, RX)
